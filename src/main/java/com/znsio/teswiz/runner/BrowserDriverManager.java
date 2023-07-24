@@ -518,9 +518,10 @@ class BrowserDriverManager {
                 String authenticationKey = Runner.getCloudKey();
                 remoteUrl = "https://" + authenticationUser + ":" + authenticationKey + "@hub.browserstack.com/wd/hub";
                 capabilities = BrowserStackSetup.updateBrowserStackCapabilities(capabilities);
-            }else if(System.getenv("CHROME_CONTAINER_NAME") !=null){
-                remoteUrl = "http://"+System.getenv("CHROME_CONTAINER_NAME")+":4444"+ webDriverHubSuffix;
             }
+//            else if(System.getenv("CHROME_CONTAINER_NAME") !=null){
+//                remoteUrl = "http://"+System.getenv("CHROME_CONTAINER_NAME")+":4444"+ webDriverHubSuffix;
+//            }
 
             LOGGER.info(String.format("Starting RemoteWebDriver using url: %s with capabilities: '%s'", remoteUrl, capabilities));
             RemoteWebDriver remoteWebDriver = new RemoteWebDriver(new URL(remoteUrl),
