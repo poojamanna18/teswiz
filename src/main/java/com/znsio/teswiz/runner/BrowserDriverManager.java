@@ -323,6 +323,7 @@ class BrowserDriverManager {
             LOGGER.info("Setting Proxy for browser: " + "'" + proxyUrl + "' with noProxy for: '" + noProxyFor + ", and proxyType: " + proxyType);
             Proxy proxy = new Proxy().setHttpProxy(proxyUrl).setNoProxy(noProxyFor).setProxyType(proxyType);
             chromeOptions.setCapability("proxy", proxy);
+            LOGGER.info("Proxy added");
         }
     }
 
