@@ -469,8 +469,10 @@ class BrowserDriverManager {
         try {
             String cloudName = Runner.getCloudName();
             String webDriverHubSuffix = "/wd/hub";
+//            String remoteUrl =
+//                    "http://" + Runner.getRemoteDriverGridHostName() + ":" + Runner.getRemoteDriverGridPort() + webDriverHubSuffix;
             String remoteUrl =
-                    "http://" + Runner.getRemoteDriverGridHostName() + ":" + Runner.getRemoteDriverGridPort() + webDriverHubSuffix;
+                    "http://" + Runner.getRemoteDriverGridHostName() + ":" + Runner.getRemoteDriverGridPort();
             if (cloudName.equalsIgnoreCase("headspin")) {
                 String authenticationKey = Runner.getCloudKey();
                 String capabilityFile = System.getProperty(CAPS);
